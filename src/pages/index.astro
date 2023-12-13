@@ -3,11 +3,11 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import Experience from "@/components/Experience.astro";
 import Projects from "@/components/Projects.astro";
-import { Model } from "@/components/Model";
+import Experience3D from "@/components/Experience3D";
 ---
 
 <Layout title="JuanoD">
-  <Model client:load transition:persist />
+  <Experience3D client:load transition:persist />
   <main>
     <Hero />
     <Experience />
