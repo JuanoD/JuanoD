@@ -1,3 +1,86 @@
+---
+import JobCard from "./JobCard.astro";
+---
+
 <section class="min-h-screen p-4" data-animation="1">
-  <h2>Experience</h2>
+  <h2 class="text-3xl text-red-400 opacity-50">Experience</h2>
+  <div class="p-8" aria-role="none"></div>
+  <ol class="grid grid-cols-[1fr_3fr] sm:grid-cols-[auto_4fr] gap-x-8 gap-y-12">
+    <JobCard
+      title="Frontend Development Team Leader"
+      company="Quick"
+      start="2022-02"
+      end="Present"
+    >
+      <li>Take decisions about the technologies used in the product</li>
+      <li>Migrate projects to a monorepo and maintain monorepo tooling</li>
+      <li>Optimize container images</li>
+      <li>Leaded and developed for the backend during the leader vacations</li>
+      <li>Helped with some support tickets for the backend team</li>
+      <li>Solve team member problems to keep the development going</li>
+      <li>
+        Think ahead about problems that may block development and solve them
+        before a blockage occurs
+      </li>
+      <li>Receive requirements, plan, and assign activities for the team members</li>
+      <li>Transfer knowledge to the team</li>
+      <li>Review, make suggestions, and accept merge requests</li>
+      <li>Solve team member problems related to git and repositories</li>
+      <li>Evaluate tests for new personnel hiring</li>
+    </JobCard>
+    <JobCard
+      title="Frontend Developer"
+      company="Quick"
+      start="2021-10"
+      end="2022-02"
+    >
+      <li>Introduced typescript to projects being developed</li>
+      <li>
+        Took the enterprise components library, rewrote it to typescript, and
+        wrote new components
+      </li>
+      <li>
+        Developed a platform to review, approve, or reject driver candidates
+      </li>
+      <li>Introduced the usage of Next.JS to new projects</li>
+    </JobCard>
+    <JobCard
+      title="Research Assistant"
+      company="Universidad del Valle"
+      start="2020-07"
+      end="2021-11"
+    >
+      <li>Researched bibliography</li>
+      <li>Made graphs of team proposals</li>
+      <li>
+        Modelled a 3D lung to use in a mechanical ventilation and lung
+        simulation lab
+      </li>
+    </JobCard>
+    <JobCard
+      title="Projects"
+      company="Self-Employed"
+      start="2019-01"
+      end="2020-06"
+    >
+      <li>
+        Developed a micro-controller and an app used to analyze vibrations of a
+        mechanical rotary balance lab bench
+      </li>
+      <li>Wired and assembled equipments for a manufacturing lab</li>
+    </JobCard>
+    <JobCard
+      title="Intern / Maintenance Analyst"
+      company="Carvajal Empaques"
+      start="2018-04"
+      end="2018-10"
+    >
+      <li>
+        Developed an app used to obtain and store measurements from power grid
+        analyzers connected via serial communication, which otherwise would have
+        costed the company 16'000.000 COP for initial licensing, plus monthly
+        usage fees
+      </li>
+    </JobCard>
+  </ol>
 </section>
