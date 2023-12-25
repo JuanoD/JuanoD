@@ -1,8 +1,11 @@
 import { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, extend } from "@react-three/fiber";
 import { Plague } from "./Plague";
 import { CameraPosition, useUpdateSection } from "./section";
 import { useControls, Leva } from "leva";
+import { AmbientLight, PointLight } from "three";
+
+extend({ AmbientLight, PointLight })
 
 export function Experience() {
   useUpdateSection();

@@ -1,20 +1,20 @@
 import { useEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-import * as THREE from "three";
+import { AnimationMixer, type AnimationAction } from "three";
 import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
 import { useSection } from "./section";
 import { useControls } from "leva";
 
 export function Plague() {
   const { scene, animations } = useGLTF("/plague.glb");
-  const mixer = useMemo(() => new THREE.AnimationMixer(scene), [scene]);
+  const mixer = useMemo(() => new AnimationMixer(scene), [scene]);
   const clips = useMemo(
     () => animations.map((clip) => mixer.clipAction(clip)),
     [animations, mixer]
   );
 
-  const lastAnimation = useRef<THREE.AnimationAction>(
+  const lastAnimation = useRef<AnimationAction>(
     (() => {
       clips[0].play();
       return clips[0];
