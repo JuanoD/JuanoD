@@ -1,7 +1,6 @@
 import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
 import { useThree } from "@react-three/fiber";
 import { atom, useAtomValue, useSetAtom } from "jotai";
-import { useControls } from "leva";
 import { useEffect, useLayoutEffect } from "react";
 
 const sectionAtom = atom(0);
@@ -41,16 +40,19 @@ export function useUpdateSection() {
 export function CameraPosition() {
   const matches = useMediaQuery("(min-width: 768px)");
 
-  const { camPosition } = useControls({
-    camPosition: { value: [-4, 0, -5], min: -10, max: 10, step: 0.1 },
-  });
+  // const { camPosition } = useControls({
+  //   camPosition: { value: [-4, 0, -5], min: -10, max: 10, step: 0.1 },
+  // });
+
+  const camPosition: [number, number, number] = [-4, 0, -5];
 
   const camera = useThree((s) => s.camera);
 
   useLayoutEffect(() => {
-    camera.position.set(...camPosition);
+    const cam: [number, number, number] = matches ? camPosition : [0, 0, -5];
+    camera.position.set(...cam);
     camera.updateProjectionMatrix();
     camera.lookAt(0, 0, 0);
-  }, [camera, camPosition]);
+  }, [camera, camPosition, matches]);
   return null;
 }
