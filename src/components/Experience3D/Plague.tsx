@@ -1,36 +1,78 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-import { AnimationMixer, type AnimationAction } from "three";
+import {
+  AnimationMixer,
+  type AnimationAction,
+  type AnimationMixerEventMap,
+  LoopOnce,
+} from "three";
 import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
 import { useSection } from "./section";
+import { animate } from "popmotion";
+
+type AnimationName = "00TipHat" | "01Wave" | "02GrabFromHat";
+
+const sectionToClip: Record<number, AnimationName> = {
+  0: "00TipHat",
+  1: "02GrabFromHat",
+  2: "02GrabFromHat",
+};
+
+const sectionNext: Record<number, AnimationName | undefined> = {
+  0: undefined,
+  1: "00TipHat",
+  2: "00TipHat",
+};
+
+type ClipsRecord = Record<AnimationName, AnimationAction>;
 
 export function Plague() {
   const { scene, animations } = useGLTF("/plague.glb");
   const mixer = useMemo(() => new AnimationMixer(scene), [scene]);
-  const [clips, setClips] = useState<AnimationAction[]>();
+  const clips = useRef<ClipsRecord>();
+  const [loaded, setLoaded] = useState(false);
 
   const nextAnimation = useRef<AnimationAction>();
   const lastAnimation = useRef<AnimationAction>();
 
+  const groupRef = useRef<THREE.Group>(null);
+
   useEffect(() => {
     if (animations.length === 0) return;
-    const sortedClips = animations
+    const clipsMap = animations
       .map((clip) => mixer.clipAction(clip))
-      .sort((a, b) => a.getClip().name.localeCompare(b.getClip().name));
-      sortedClips[2].repetitions = 1
-    setClips(sortedClips);
+      .reduce((p, clip) => {
+        const name = clip.getClip().name;
+        p[name as AnimationName] = clip;
+        return p;
+      }, {} as ClipsRecord);
 
-    lastAnimation.current = sortedClips[0];
-    const onFinish = (e) => {
-      console.log(e);
-      sortedClips[2].reset();
-      
-      sortedClips[2].play();
+    clipsMap["02GrabFromHat"].setLoop(LoopOnce, 1);
 
+    clips.current = clipsMap;
+    setLoaded(true);
+
+    const onFinish = (e: AnimationMixerEventMap["finished"]) => {
+      lastAnimation.current?.fadeOut(0.2);
+
+      nextAnimation.current?.reset?.();
+      animate({
+        from: 0,
+        to: 360,
+        onUpdate(latest) {
+          if (!groupRef.current) return;
+          groupRef.current.rotation.y = (latest * 2 * Math.PI) / 360;
+        },
+      });
+      nextAnimation.current?.fadeIn?.(0.2);
+      nextAnimation.current?.play?.();
+
+      lastAnimation.current = nextAnimation.current;
+      nextAnimation.current = undefined;
     };
     mixer.addEventListener("finished", onFinish);
-    sortedClips[2].play();
+
     return () => {
       mixer.removeEventListener("finished", onFinish);
     };
@@ -39,15 +81,19 @@ export function Plague() {
   const section = useSection();
 
   useEffect(() => {
-    if (!clips) return;
-    const newAnimation = clips[section];
+    if (!loaded || !clips.current) return;
+
+    const newAnimation = clips.current[sectionToClip[section]];
+
     if (newAnimation === lastAnimation.current) return;
     lastAnimation.current?.fadeOut(0.2);
     newAnimation.reset();
     newAnimation.fadeIn(0.2);
     newAnimation.play();
     lastAnimation.current = newAnimation;
-  }, [clips, mixer, section]);
+    const nextClipName = sectionNext[section];
+    if (nextClipName) nextAnimation.current = clips.current[nextClipName];
+  }, [loaded, section]);
 
   useFrame((state, delta) => {
     mixer.update(delta);
@@ -59,7 +105,7 @@ export function Plague() {
   // });
   const plaguePosition = [-3, 0, 0] as const;
   return (
-    <group position={matches ? plaguePosition : [0, 0, 0]}>
+    <group position={matches ? plaguePosition : [0, 0, 0]} ref={groupRef}>
       <primitive object={scene} />
     </group>
   );
