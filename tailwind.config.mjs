@@ -1,4 +1,5 @@
 import animate from "tailwindcss-animate";
+import catppuccin from "@catppuccin/tailwindcss";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,5 +7,11 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+    catppuccin({
+      prefix: "cat",
+      defaultFlavour: "mocha",
+    }),
+  ],
 };

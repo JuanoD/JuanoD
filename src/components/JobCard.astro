@@ -11,14 +11,22 @@ const { title, company, start, end } = Astro.props;
 ---
 
 <li class="grid grid-cols-subgrid col-span-full grid-rows-[auto_1fr] gap-y-2">
-  <div class="col-start-1 text-right relative grid grid-rows-subgrid row-span-full">
-    <p class="text-red-400 opacity-70 self-center">{company}</p>
-    <p class="text-sm text-gray-400">{start}<span class="block sm:inline"> — </span>{end}</p>
-    <div class="absolute h-full w-1 -right-4 bg-red-500 top-0 translate-x-1/2" role="separator" />
+  <div
+    class="col-start-1 text-right relative grid grid-rows-subgrid row-span-full"
+  >
+    <p class="text-cat-yellow font-semibold self-center">{company}</p>
+    <p class="text-sm text-cat-subtext0">
+      {start}<span class="block sm:inline"> —</span>{end}
+    </p>
+    <div
+      class="absolute h-full w-1 -right-4 bg-red-500 top-0 translate-x-1/2"
+      role="separator"
+    >
+    </div>
   </div>
   <div class="col-start-2 grid grid-rows-subgrid row-span-full">
-    <h3 class="text-lg text-orange-400">{title}</h3>
-    <ul class="max-w-prose *:list-disc pl-4">
+    <h3 class="text-lg text-cat-peach font-bold">{title}</h3>
+    <ul class="max-w-prose *:list-disc pl-4 text-cat-text">
       <slot />
     </ul>
   </div>
