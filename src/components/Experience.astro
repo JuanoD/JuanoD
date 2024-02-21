@@ -1,10 +1,11 @@
 ---
 import JobCard from "./JobCard.astro";
+import Section from "@/layouts/Section.astro";
 ---
 
-<section class="min-h-[calc(100dvh-4rem)] p-4" data-animation="1">
+<Section animation={1}>
   <h2 class="text-3xl text-cat-red">Experience</h2>
-  <div class="p-8" aria-role="none" />
+  <div class="p-8" aria-role="none"></div>
   <ol class="grid grid-cols-[1fr_3fr] sm:grid-cols-[auto_4fr] gap-x-8 gap-y-12">
     <JobCard
       title="Frontend Development Team Leader"
@@ -85,4 +86,4 @@ import JobCard from "./JobCard.astro";
       </li>
     </JobCard>
   </ol>
-</section>
+</Section>
