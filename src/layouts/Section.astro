@@ -1,20 +1,23 @@
 ---
 interface Props {
   animation: number;
+  name: string;
 }
 
-const { animation } = Astro.props;
+const { animation, name } = Astro.props;
 ---
 
 <section class="min-h-[calc(100dvh-4rem)] p-4">
   <div class="flex w-full">
     <div
-      class="h-[65vh] sticky top-0 w-px -ml-px"
+      class="h-[calc(100dvh-4rem)] sticky top-0 w-px -ml-px"
       aria-role="none"
       data-animation={animation}
     >
     </div>
     <div class="w-full">
+      <h2 class="text-3xl text-cat-red">{name}</h2>
+      <div class="p-8" aria-role="none"></div>
       <slot />
     </div>
   </div>
