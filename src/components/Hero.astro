@@ -1,10 +1,13 @@
-<section
-  class="min-h-[calc(100dvh-5rem)] flex flex-col justify-center p-4"
-  data-animation="0"
->
-  <h1 class="text-6xl text-cat-red">JuanoD</h1>
-  <div class="p-2" aria-role="none"></div>
-  <p class="text-cat-text font-semibold">
-    Documentation reading enjoyer. Constantly learning developer.
-  </p>
-</section>
+---
+import Section from "@/layouts/Section.astro";
+---
+
+<Section animation={0}>
+  <div class="flex flex-col justify-center h-full min-h-[calc(100dvh-8rem)]">
+    <h1 class="text-6xl text-cat-red">JuanoD</h1>
+    <div class="p-2" aria-role="none"></div>
+    <p class="text-cat-text font-semibold">
+      Documentation reading enjoyer. Constantly learning developer.
+    </p>
+  </div>
+</Section>

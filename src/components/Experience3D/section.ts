@@ -24,7 +24,7 @@ export function useUpdateSection() {
         });
       },
       {
-        threshold: 0.5,
+        threshold: 1,
       }
     );
     document.querySelectorAll("[data-animation]").forEach((element) => {
