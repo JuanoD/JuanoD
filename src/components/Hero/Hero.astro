@@ -12,20 +12,20 @@ import Mail from "./icons/mail.astro";
   class="flex flex-col justify-center h-full min-h-[calc(50dvh)]"
 >
   <h1 class="text-6xl text-cat-red">JuanoD</h1>
-  <div class="p-4" aria-role="none"></div>
-  <p class="font-semibold text-xl">
+  <div class="p-4" aria-hidden="true"></div>
+  <p class="font-semibold text-xl text-balance">
     Documentation 🙇🏼‍♂️ reading enjoyer. Constantly learning 📚 developer.
   </p>
-  <div class="p-4" aria-role="none"></div>
+  <div class="p-4" aria-hidden="true"></div>
   <nav class="flex gap-4">
     <SocialLink href="mailto:bz2v315jw@mozmail.com">
-      <Mail class="size-8" />
+      <Mail class="size-8" /><span class="sr-only">Mail</span>
     </SocialLink>
     <SocialLink href="https://github.com/JuanoD">
-      <GitHub class="size-8" />
+      <GitHub class="size-8" /><span class="sr-only">GitHub</span>
     </SocialLink>
     <SocialLink href="https://linkedin.com/in/JuanoD">
-      <LinkedIn class="size-8" />
+      <LinkedIn class="size-8" /><span class="sr-only">LinkedIn</span>
     </SocialLink>
   </nav>
 </Section>

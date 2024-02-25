@@ -1,10 +1,9 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   company: string;
   start: string;
   end: string;
-  children: any;
 }
 
 const { title, company, start, end } = Astro.props;
@@ -12,14 +11,14 @@ const { title, company, start, end } = Astro.props;
 
 <li class="col-span-full gap-y-2">
   <div class="flex justify-between items-center">
-    <h3 class="text-cat-peach text-lg font-bold self-center">{company}</h3>
+    <h3 class="text-cat-peach text-lg font-bold self-center text-balance">{company}</h3>
     <time class="text-sm text-cat-subtext0">
       {start} — {end}
     </time>
   </div>
-  <h4 class="text-cat-yellow font-semibold">{title}</h4>
-  <p class="mb-2"><slot /></p>
-  <ul class="list-disc *:mb-1 pl-4 marker:text-cat-green/100">
+  <h4 class="text-cat-yellow font-semibold text-balance empty:hidden">{title}</h4>
+  <p class="mb-2 empty:hidden"><slot /></p>
+  <ul class="list-disc *:mb-1 pl-4 marker:text-cat-green/100 empty:hidden">
     <slot name="list" />
   </ul>
 </li>

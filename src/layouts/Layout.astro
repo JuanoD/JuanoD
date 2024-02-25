@@ -10,7 +10,7 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="JuanoD's website" />
+    <meta name="description" content="JuanoD's portfolio" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -34,7 +34,10 @@ const { title } = Astro.props;
     color: theme(colors.cat-text.DEFAULT);
   }
 
-  ::-moz-selection,
+  * {
+    text-wrap: pretty;
+  }
+
   ::selection {
     background-color: theme(colors.cat-teal.DEFAULT);
     color: theme(colors.cat-crust.DEFAULT);

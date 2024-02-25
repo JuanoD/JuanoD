@@ -4,28 +4,35 @@ import Experience from "@/components/Experience";
 import Experience3D from "@/components/Experience3D";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import AboutMe from "@/components/AboutMe.astro";
 import Layout from "@/layouts/Layout.astro";
 // import Projects from "@/components/Projects";
 ---
 
 <Layout title="JuanoD">
   <Header />
-  <Experience3D client:load transition:persist />
+  <Experience3D client:idle transition:persist />
   <main>
     <Hero />
     <Experience />
     <!--Projects /-->
-    <!--Education /-->
-    <footer class="h-12 flex items-center justify-center gap-4">
+    <Education />
+    <AboutMe />
+    <footer class="h-12 flex items-center justify-center gap-4 -mb-16">
       <span>© Juan David Díaz - {new Date().getFullYear()}</span>
-      <a href="https://librecounter.org/juanod.com/show" target="_blank">
+      <a href="https://librecounter.org/referer/show" target="_blank">
         <img
           class="size-4"
           src="https://librecounter.org/counter.svg"
           referrer-policy="unsafe-url"
+          alt="LibreCounter"
         />
       </a>
     </footer>
+    <div
+      class="sticky bottom-0 bg-gradient-to-t from-cat-crust from-40% z-10 h-24 pointer-events-none rounded-t"
+    >
+    </div>
   </main>
 </Layout>
 

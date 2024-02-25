@@ -1,7 +1,22 @@
 ---
 import Section from "@/layouts/Section.astro";
+import JobCard from "@/components/Experience/JobCard.astro";
 ---
 
-<Section name="Education" animation={1}>
-  <ol></ol>
+<Section name="Education" animation={2}>
+  <ol class="max-w-prose *:mb-12">
+    <JobCard company="Autonomous Learning" start="2017" end="Now" />
+    <JobCard
+      title="Master in Computing and Systems Engineering"
+      company="Universidad del Valle"
+      start="2019"
+      end="2023"
+    />
+    <JobCard
+      title="Mechanical Engineering"
+      company="Universidad del Valle"
+      start="2012"
+      end="2017"
+    />
+  </ol>
 </Section>

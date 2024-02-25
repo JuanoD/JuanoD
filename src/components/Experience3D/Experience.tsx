@@ -1,7 +1,10 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Canvas, extend } from "@react-three/fiber";
-import { Plague } from "./Plague";
 import { CameraPosition, useUpdateSection } from "./section";
+
+const Plague = lazy(() =>
+  import("./Plague").then((m) => ({ default: m.Plague }))
+);
 
 export function Experience() {
   const debug =
@@ -21,9 +24,9 @@ function UExperience() {
   //   decay: 0.35,
   //   intensity: 6,
   // });
-  
+
   const decay = 0.35;
-  const intensity = 6
+  const intensity = 6;
 
   return (
     <div className="w-screen h-screen -z-10 fixed">

@@ -7,9 +7,11 @@ import Home from "./Home.astro";
   <nav
     class="flex items-center gap-2 bg-cat-surface0/50 px-2 rounded-full backdrop-blur"
   >
-    <NavLink href="#home"><Home /></NavLink>
-    <NavLink href="#experience">Experience</NavLink>
-    <!--NavLink href="#projects">Projects</NavLink-->
-    <!--NavLink href="#aboutme">About Me</NavLink-->
+    <NavLink href="#home">
+      <Home /><span class="sr-only">Home</span>
+      <NavLink href="#experience">Experience</NavLink>
+      <!--NavLink href="#projects">Projects</NavLink-->
+      <NavLink href="#education">About Me</NavLink>
+    </NavLink>
   </nav>
 </header>

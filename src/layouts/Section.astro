@@ -13,7 +13,7 @@ const id = name?.toLowerCase().replace(/ /g, "-") ?? hash;
 <section class="p-4 pl-8 flex w-full max-w-[56rem] lg:ml-[12dvw]" id={id}>
   <div
     class="h-[50dvh] sticky top-0 w-px -ml-px"
-    aria-role="none"
+    aria-hidden="true"
     data-animation={animation}
   >
   </div>
@@ -21,8 +21,11 @@ const id = name?.toLowerCase().replace(/ /g, "-") ?? hash;
     {
       name && (
         <>
-          <h2 class="text-3xl text-cat-red">{name}</h2>
-          <div class="p-8" aria-role="none" />
+          <h2 class="text-3xl text-cat-red flex gap-2">
+            <slot name="icon" />
+            {name}
+          </h2>
+          <div class="p-8" aria-hidden="true" />
         </>
       )
     }
