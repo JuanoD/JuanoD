@@ -32,11 +32,12 @@ const { title } = Astro.props;
       white 60%
     );
     color: theme(colors.cat-text.DEFAULT);
-    ::-moz-selection,
-    ::selection {
-      background-color: theme(colors.cat-teal.DEFAULT);
-      color: theme(colors.cat-crust.DEFAULT);
-    }
+  }
+
+  ::-moz-selection,
+  ::selection {
+    background-color: theme(colors.cat-teal.DEFAULT);
+    color: theme(colors.cat-crust.DEFAULT);
   }
   html {
     font-family: system-ui, sans-serif;
