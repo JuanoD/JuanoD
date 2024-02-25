@@ -1,0 +1,15 @@
+---
+import NavLink from "./NavLink.astro";
+import Home from "./Home.astro";
+---
+
+<header class="fixed top-2 z-10 flex justify-end items-center w-full pr-4">
+  <nav
+    class="flex items-center gap-2 bg-cat-surface0/50 px-2 rounded-full backdrop-blur"
+  >
+    <NavLink href="#home"><Home /></NavLink>
+    <NavLink href="#experience">Experience</NavLink>
+    <!--NavLink href="#projects">Projects</NavLink-->
+    <!--NavLink href="#aboutme">About Me</NavLink-->
+  </nav>
+</header>

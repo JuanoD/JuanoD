@@ -1,1 +1,1 @@
-export { default as default } from "./Education.astro";
+export { default } from "./Education.astro";

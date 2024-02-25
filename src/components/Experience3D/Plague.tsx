@@ -14,7 +14,7 @@ import { animate } from "popmotion";
 type AnimationName = "00TipHat" | "01Wave" | "02GrabFromHat";
 
 const sectionToClip: Record<number, AnimationName> = {
-  0: "00TipHat",
+  0: "01Wave",
   1: "02GrabFromHat",
   2: "02GrabFromHat",
 };
@@ -105,7 +105,7 @@ export function Plague() {
   // });
   const plaguePosition = [-3, 0, 0] as const;
   return (
-    <group position={matches ? plaguePosition : [0, 0, 0]} ref={groupRef}>
+    <group position={matches ? plaguePosition : [-1, 3, 0]} ref={groupRef}>
       <primitive object={scene} />
     </group>
   );

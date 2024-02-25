@@ -1,31 +1,36 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/Hero.astro";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Experience3D from "@/components/Experience3D";
 import Education from "@/components/Education";
+import Experience from "@/components/Experience";
+import Experience3D from "@/components/Experience3D";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Layout from "@/layouts/Layout.astro";
+// import Projects from "@/components/Projects";
 ---
 
 <Layout title="JuanoD">
+  <Header />
   <Experience3D client:load transition:persist />
   <main>
     <Hero />
     <Experience />
-    <Projects />
-    <Education />
-    <div class="h-12" aria-role="none"></div>
+    <!--Projects /-->
+    <!--Education /-->
+    <footer class="h-12 flex items-center justify-center gap-4">
+      <span>© Juan David Díaz - {new Date().getFullYear()}</span>
+      <a href="https://librecounter.org/juanod.com/show" target="_blank">
+        <img
+          class="size-4"
+          src="https://librecounter.org/counter.svg"
+          referrer-policy="unsafe-url"
+        />
+      </a>
+    </footer>
   </main>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    /* padding: 1rem; */
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    /* font-size: 20px;
-    line-height: 1.6; */
+  :root {
+    color-scheme: dark;
   }
 </style>

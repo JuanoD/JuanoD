@@ -49,7 +49,7 @@ export function CameraPosition() {
   const camera = useThree((s) => s.camera);
 
   useLayoutEffect(() => {
-    const cam: [number, number, number] = matches ? camPosition : [0, 0, -5];
+    const cam: [number, number, number] = matches ? camPosition : [-2, 4, -7];
     camera.position.set(...cam);
     camera.updateProjectionMatrix();
     camera.lookAt(0, 0, 0);

@@ -1,1 +1,1 @@
-export { default as default} from "./Experience.astro";
+export { default } from "./Experience.astro";

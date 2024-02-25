@@ -1,0 +1,31 @@
+---
+import SocialLink from "@/components/ExternalLink.astro";
+import Section from "@/layouts/Section.astro";
+import LinkedIn from "./icons/linkedin.astro";
+import GitHub from "./icons/github.astro";
+import Mail from "./icons/mail.astro";
+---
+
+<Section
+  animation={0}
+  hash="home"
+  class="flex flex-col justify-center h-full min-h-[calc(50dvh)]"
+>
+  <h1 class="text-6xl text-cat-red">JuanoD</h1>
+  <div class="p-4" aria-role="none"></div>
+  <p class="font-semibold text-xl">
+    Documentation 🙇🏼‍♂️ reading enjoyer. Constantly learning 📚 developer.
+  </p>
+  <div class="p-4" aria-role="none"></div>
+  <nav class="flex gap-4">
+    <SocialLink href="mailto:bz2v315jw@mozmail.com">
+      <Mail class="size-8" />
+    </SocialLink>
+    <SocialLink href="https://github.com/JuanoD">
+      <GitHub class="size-8" />
+    </SocialLink>
+    <SocialLink href="https://linkedin.com/in/JuanoD">
+      <LinkedIn class="size-8" />
+    </SocialLink>
+  </nav>
+</Section>

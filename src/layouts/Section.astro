@@ -2,19 +2,22 @@
 interface Props {
   animation: number;
   name?: string;
+  hash?: string;
+  class?: string;
 }
 
-const { animation, name } = Astro.props;
+const { animation, name, hash, class: className } = Astro.props;
+const id = name?.toLowerCase().replace(/ /g, "-") ?? hash;
 ---
 
-<section class="p-4 flex w-full">
+<section class="p-4 pl-8 flex w-full max-w-[56rem] lg:ml-[12dvw]" id={id}>
   <div
     class="h-[50dvh] sticky top-0 w-px -ml-px"
     aria-role="none"
     data-animation={animation}
   >
   </div>
-  <div class="w-full">
+  <div class:list={["w-full", className]}>
     {
       name && (
         <>

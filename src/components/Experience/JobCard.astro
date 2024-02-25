@@ -10,24 +10,16 @@ interface Props {
 const { title, company, start, end } = Astro.props;
 ---
 
-<li class="grid grid-cols-subgrid col-span-full grid-rows-[auto_1fr] gap-y-2">
-  <div
-    class="col-start-1 text-right relative grid grid-rows-subgrid row-span-full"
-  >
-    <p class="text-cat-yellow font-semibold self-center">{company}</p>
-    <p class="text-sm text-cat-subtext0">
-      {start}<span class="block sm:inline"> —</span>{end}
-    </p>
-    <div
-      class="absolute h-full w-1 -right-4 bg-cat-mauve top-0 translate-x-1/2"
-      role="separator"
-    >
-    </div>
+<li class="col-span-full gap-y-2">
+  <div class="flex justify-between items-center">
+    <h3 class="text-cat-peach text-lg font-bold self-center">{company}</h3>
+    <time class="text-sm text-cat-subtext0">
+      {start} — {end}
+    </time>
   </div>
-  <div class="col-start-2 grid grid-rows-subgrid row-span-full">
-    <h3 class="text-lg text-cat-peach font-bold">{title}</h3>
-    <ul class="max-w-prose *:list-disc pl-4 text-cat-text">
-      <slot />
-    </ul>
-  </div>
+  <h4 class="text-cat-yellow font-semibold">{title}</h4>
+  <p class="mb-2"><slot /></p>
+  <ul class="list-disc *:mb-1 pl-4 marker:text-cat-green/100">
+    <slot name="list" />
+  </ul>
 </li>
