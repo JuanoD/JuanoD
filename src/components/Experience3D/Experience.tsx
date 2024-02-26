@@ -1,10 +1,13 @@
 import { Suspense, lazy } from "react";
 import { Canvas, extend } from "@react-three/fiber";
 import { CameraPosition, useUpdateSection } from "./section";
+import { AmbientLight, PointLight, Group } from "three";
 
 const Plague = lazy(() =>
   import("./Plague").then((m) => ({ default: m.Plague }))
 );
+
+extend({ AmbientLight, PointLight, Group });
 
 export function Experience() {
   const debug =
