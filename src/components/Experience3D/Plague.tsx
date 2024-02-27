@@ -11,17 +11,22 @@ import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
 import { useSection } from "./section";
 import { animate } from "popmotion";
 
-type AnimationName = "00TipHat" | "01Wave" | "02GrabFromHat";
+type AnimationName =
+  | "00TipHat"
+  | "01Wave"
+  | "02GrabFromHat"
+  | "03AppearBalls"
+  | "04Juggle";
 
 const sectionToClip: Record<number, AnimationName> = {
   0: "01Wave",
-  1: "02GrabFromHat",
+  1: "03AppearBalls",
   2: "02GrabFromHat",
 };
 
 const sectionNext: Record<number, AnimationName | undefined> = {
   0: undefined,
-  1: "00TipHat",
+  1: "04Juggle",
   2: "00TipHat",
 };
 
@@ -49,6 +54,7 @@ export function Plague() {
       }, {} as ClipsRecord);
 
     clipsMap["02GrabFromHat"].setLoop(LoopOnce, 1);
+    clipsMap["03AppearBalls"].setLoop(LoopOnce, 1);
 
     clips.current = clipsMap;
     setLoaded(true);
@@ -60,6 +66,7 @@ export function Plague() {
       animate({
         from: 0,
         to: 360,
+        duration: 500,
         onUpdate(latest) {
           if (!groupRef.current) return;
           groupRef.current.rotation.y = (latest * 2 * Math.PI) / 360;
@@ -93,6 +100,7 @@ export function Plague() {
     lastAnimation.current = newAnimation;
     const nextClipName = sectionNext[section];
     if (nextClipName) nextAnimation.current = clips.current[nextClipName];
+    console.log({ nextClipName });
   }, [loaded, section]);
 
   useFrame((state, delta) => {
