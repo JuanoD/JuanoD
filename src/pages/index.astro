@@ -18,8 +18,12 @@ import Layout from "@/layouts/Layout.astro";
     <!--Projects /-->
     <Education />
     <AboutMe />
-    <footer class="h-12 flex items-center justify-center gap-4 -mb-16">
-      <span>© Juan David Díaz - {new Date().getFullYear()}</span>
+    <footer
+      class="h-12 flex items-center justify-center gap-4 -mb-16 sticky bottom-0 z-20"
+    >
+      <span class="text-sm text-cat-subtext0"
+        >© Juan David Díaz - {new Date().getFullYear()}</span
+      >
       <a href="https://librecounter.org/referer/show" target="_blank">
         <img
           class="size-4"
@@ -31,6 +35,7 @@ import Layout from "@/layouts/Layout.astro";
     </footer>
     <div
       class="sticky bottom-0 bg-gradient-to-t from-cat-crust from-40% z-10 h-24 pointer-events-none rounded-t"
+      aria-hidden="true"
     >
     </div>
   </main>
