@@ -1,73 +1,96 @@
 ---
+import { SEO } from "astro-seo";
+import og from "@/assets/og.png";
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const description =
+  "Need a fullstack developer? Documentation reading enjoyer, Constantly learning. It's JuanoD. With multiple years of experience developing and leading teams";
+const site = "https://juanod.com";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="JuanoD's portfolio" />
+    <SEO
+      title={title}
+      description={description}
+      charset="UTF-8"
+      canonical={site}
+      openGraph={{
+        basic: { title: title, type: "website", image: og.src },
+        optional: { locale: "en_US", description: "JuanoD's portfolio" },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: title,
+        description,
+        site,
+        image: og.src,
+        imageAlt: "JuanoD's portfolio Hero Section",
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
+      }}
+    />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <!--meta name="generator" content={Astro.generator} /-->
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
-  </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-    color: theme(colors.cat-text.DEFAULT);
-  }
+<body>
+  <slot />
+  <style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+      );
+      color: theme(colors.cat-text.DEFAULT);
+    }
 
-  * {
-    text-wrap: pretty;
-  }
+    * {
+      text-wrap: pretty;
+    }
 
-  ::selection {
-    background-color: theme(colors.cat-teal.DEFAULT);
-    color: theme(colors.cat-crust.DEFAULT);
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: theme(colors.cat-base.DEFAULT);
-    background-size: 224px;
-  }
+    ::selection {
+      background-color: theme(colors.cat-teal.DEFAULT);
+      color: theme(colors.cat-crust.DEFAULT);
+    }
+    html {
+      font-family: system-ui, sans-serif;
+      background: theme(colors.cat-base.DEFAULT);
+      background-size: 224px;
+    }
 
-  html,
-  body {
-    scrollbar-gutter: stable;
-    scroll-padding-top: theme(size.12);
-    scroll-behavior: smooth;
-  }
+    html,
+    body {
+      scrollbar-gutter: stable;
+      scroll-padding-top: theme(size.12);
+      scroll-behavior: smooth;
+    }
 
-  a {
-    @apply focus-visible:ring-2 focus-visible:ring-cat-sky focus:outline-none focus-visible:outline-none rounded text-cat-blue hover:text-cat-sky;
-  }
+    a {
+      @apply focus-visible:ring-2 focus-visible:ring-cat-sky focus:outline-none focus-visible:outline-none rounded text-cat-blue hover:text-cat-sky;
+    }
 
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+  </style>
+</body>
