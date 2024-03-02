@@ -20,15 +20,15 @@ const site = "https://juanod.com";
       charset="UTF-8"
       canonical={site}
       openGraph={{
-        basic: { title: title, type: "website", image: og.src },
+        basic: { title: title, type: "website", image: `${site}${og.src}` },
         optional: { locale: "en_US", description },
       }}
       twitter={{
         card: "summary_large_image",
         title: title,
         description,
-        site,
-        image: og.src,
+        // site,
+        image: `${site}${og.src}`,
         imageAlt: "JuanoD's portfolio Hero Section",
       }}
       extend={{
