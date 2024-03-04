@@ -15,7 +15,7 @@
 </h2>
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nextjs,tailwind,ts,react,css,docker,ts,md,nodejs,django,py,nginx,postgres,rabbitmq&perline=14" />
+    <img src="https://skillicons.dev/icons?i=nextjs,tailwind,ts,react,css,docker,md,nodejs,django,py,nginx,postgres,rabbitmq&perline=14" />
   </a>
 </p>
 

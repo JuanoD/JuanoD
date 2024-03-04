@@ -100,7 +100,6 @@ export function Plague() {
     lastAnimation.current = newAnimation;
     const nextClipName = sectionNext[section];
     if (nextClipName) nextAnimation.current = clips.current[nextClipName];
-    console.log({ nextClipName });
   }, [loaded, section]);
 
   useFrame((state, delta) => {

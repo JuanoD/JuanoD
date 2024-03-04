@@ -17,6 +17,9 @@ export default defineConfig({
   //   },
   // },
   site,
+  image: {
+    domains: ["skillicons.dev"],
+  },
   integrations: [
     tailwind(),
     react({

@@ -10,7 +10,7 @@ const { animation, name, hash, class: className } = Astro.props;
 const id = name?.toLowerCase().replace(/ /g, "-") ?? hash;
 ---
 
-<section class="p-4 pl-8 flex w-full max-w-[56rem] lg:ml-[12dvw]" id={id}>
+<section class="p-4 pl-8 flex w-full max-w-[56rem] lg:ml-[12dvw] mb-24 first:mb-0 last-of-type:mb-0" id={id}>
   <div
     class="h-[50dvh] sticky top-0 w-px -ml-px"
     aria-hidden="true"

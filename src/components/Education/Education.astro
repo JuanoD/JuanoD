@@ -1,11 +1,31 @@
 ---
 import Section from "@/layouts/Section.astro";
 import JobCard from "@/components/Experience/JobCard.astro";
+import A from "@/components/ExternalLink.astro";
 ---
 
 <Section name="Education" animation={2}>
-  <ol class="max-w-prose *:mb-12">
-    <JobCard company="Autonomous Learning" start="2017" end="Now" />
+  <ol class="max-w-prose *:mb-12 last:*:mb-0 text-pretty">
+    <JobCard company="Autonomous Learning" start="2017" end="Now">
+      I tried to index my knowledge with different software after finding about the Zettelkasten. I got invested into <A href="https://obsidian.md/">Obsidian</A>.
+      Here are some resources where I learn from:
+      <Fragment slot="list">
+        <li>Documentation</li>
+        <li>
+          Some amazing content creators, like <A
+            href="https://www.youtube.com/@midudev"
+          >
+            midudev
+          </A> and <A href="https://www.youtube.com/@jherr">Jack Herrington</A>
+        </li>
+        <li><A href="https://dev.to/">DEV.to</A> articles</li>
+        <li>
+          <A href="https://platzi.com/p/juanod/">Platzi</A>
+        </li>
+        <li><A href="https://www.freecodecamp.org">FreeCodeCamp</A></li>
+      </Fragment>
+    </JobCard>
+
     <JobCard
       title="Master in Computing and Systems Engineering"
       company="Universidad del Valle"
