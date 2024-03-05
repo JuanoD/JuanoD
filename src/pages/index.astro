@@ -7,12 +7,14 @@ import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe.astro";
 import Layout from "@/layouts/Layout.astro";
 import Skills from "@/components/Skills.astro";
+import Plague from "@/assets/plague/plague.astro";
 // import Projects from "@/components/Projects";
 ---
 
 <Layout title="JuanoD">
   <Header />
   <Experience3D client:idle transition:persist />
+  <Plague />
   <main>
     <Hero />
     <Experience />

@@ -10,6 +10,7 @@ import {
 import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
 import { useSection } from "./section";
 import { animate } from "popmotion";
+import { useHideSVG } from "./useHideSVG";
 
 type AnimationName =
   | "00TipHat"
@@ -42,6 +43,8 @@ export function Plague() {
   const lastAnimation = useRef<AnimationAction>();
 
   const groupRef = useRef<THREE.Group>(null);
+
+  useHideSVG();
 
   useEffect(() => {
     if (animations.length === 0) return;
