@@ -1,6 +1,5 @@
 // @ts-check
 import catppuccin from "@catppuccin/tailwindcss";
-import flowbite from "flowbite/plugin";
 import plugin from "tailwindcss/plugin";
 import animate from "tailwindcss-animate";
 
@@ -8,7 +7,6 @@ import animate from "tailwindcss-animate";
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {},
@@ -19,7 +17,6 @@ export default {
       prefix: "cat",
       defaultFlavour: "mocha",
     }),
-    flowbite,
     // https://play.tailwindcss.com/u34Y0G769l?file=config
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
