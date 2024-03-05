@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 ---
 
 <Section animation={2} name="Skills">
-  <div class="break-inside-avoid">
+  <div class="break-inside-avoid w-fit">
     <h3 class="text-cat-peach text-lg font-bold self-center text-balance mb-2">
       Technologies
     </h3>
@@ -13,11 +13,18 @@ import { Image } from "astro:assets";
         src="https://skillicons.dev/icons?i=nextjs,tailwind,ts,react,css,docker,md,nodejs,django,py,nginx,postgres,rabbitmq&perline=6"
         alt="Nextjs Tailwind Typescript React CSS Docker Markdown NodeJS Django Python Nginx Postgres Rabbitmq"
         inferSize
+        class="print:hidden"
       />
+      <Image
+      src="https://skillicons.dev/icons?i=nextjs,tailwind,ts,react,css,docker,md,nodejs,django,py,nginx,postgres,rabbitmq&perline=13"
+      alt="Nextjs Tailwind Typescript React CSS Docker Markdown NodeJS Django Python Nginx Postgres Rabbitmq"
+      inferSize
+      class="hidden print:block"
+    />
     </a>
   </div>
 
-  <div class="break-inside-avoid">
+  <div class="break-inside-avoid w-fit">
     <h3
       class="text-cat-peach text-lg font-bold self-center text-balance mb-2 mt-8"
     >
@@ -32,7 +39,7 @@ import { Image } from "astro:assets";
     </a>
   </div>
 
-  <div class="break-inside-avoid">
+  <div class="break-inside-avoid w-fit">
     <h3
       class="text-cat-peach text-lg font-bold self-center text-balance mt-8 mb-2"
     >
