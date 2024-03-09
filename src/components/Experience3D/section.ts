@@ -38,7 +38,7 @@ export function useUpdateSection() {
 }
 
 export function CameraPosition() {
-  const matches = useMediaQuery("(min-width: 768px)");
+  const desktop = useMediaQuery("(min-width: 768px)");
 
   // const { camPosition } = useControls({
   //   camPosition: { value: [-4, 0, -5], min: -10, max: 10, step: 0.1 },
@@ -49,10 +49,12 @@ export function CameraPosition() {
   const camera = useThree((s) => s.camera);
 
   useLayoutEffect(() => {
-    const cam: [number, number, number] = matches ? camPosition : [-2, 4, -7];
+    const cam: [number, number, number] = desktop ? camPosition : [-5, -3, -5];
     camera.position.set(...cam);
     camera.updateProjectionMatrix();
-    camera.lookAt(0, 0, 0);
-  }, [camera, camPosition, matches]);
+    camera.lookAt(
+      ...((desktop ? [0, 0, 0] : [-3, 0, 0]) as [number, number, number])
+    );
+  }, [camera, camPosition, desktop]);
   return null;
 }

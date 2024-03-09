@@ -32,8 +32,8 @@ function UExperience() {
   const intensity = 6;
 
   return (
-    <div className="w-screen h-screen -z-10 fixed">
-      <Canvas>
+    <div className="w-dvw h-dvh z-20 md:-z-10 fixed pointer-events-none">
+      <Canvas style={{ "pointerEvents": "none"}}>
         <CameraPosition />
         <ambientLight intensity={0.5} />
         <pointLight position={[5, 5, -5]} decay={decay} intensity={intensity} />

@@ -5,6 +5,7 @@ import {
   AnimationMixer,
   type AnimationAction,
   type AnimationMixerEventMap,
+  type Group,
   LoopOnce,
 } from "three";
 import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
@@ -42,7 +43,7 @@ export function Plague() {
   const nextAnimation = useRef<AnimationAction>();
   const lastAnimation = useRef<AnimationAction>();
 
-  const groupRef = useRef<THREE.Group>(null);
+  const groupRef = useRef<Group>(null);
 
   useHideSVG();
 
@@ -115,7 +116,7 @@ export function Plague() {
   // });
   const plaguePosition = [-3, 0, 0] as const;
   return (
-    <group position={matches ? plaguePosition : [-1, 3, 0]} ref={groupRef}>
+    <group position={matches ? plaguePosition : [-3, -3, 3]} ref={groupRef}>
       <primitive object={scene} />
     </group>
   );

@@ -3,9 +3,9 @@ import NavLink from "./NavLink.astro";
 import Home from "./Home.astro";
 ---
 
-<header class="fixed top-2 z-10 flex justify-end items-center w-full pr-4 print:hidden">
+<header class="fixed pt-2 pb-8 z-10 flex justify-end items-center w-full pr-4 print:hidden bg-gradient-to-b from-cat-base from-60% pointer-events-none">
   <nav
-    class="flex items-center gap-2 bg-cat-surface0/50 px-2 rounded-full backdrop-blur"
+    class="flex items-center gap-2 bg-cat-surface0/50 px-2 rounded-full backdrop-blur pointer-events-auto"
   >
     <NavLink href="#home">
       <Home /><span class="sr-only">Home</span>
