@@ -18,7 +18,7 @@ export default defineConfig({
   // },
   site,
   image: {
-    domains: ["skillicons.dev"],
+    domains: ["skillicons.dev", "raw.githubusercontent.com"],
   },
   integrations: [
     tailwind(),

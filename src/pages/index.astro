@@ -8,6 +8,8 @@ import AboutMe from "@/components/AboutMe.astro";
 import Layout from "@/layouts/Layout.astro";
 import Skills from "@/components/Skills.astro";
 import Plague from "@/assets/plague/plague.astro";
+import { Image } from "astro:assets";
+import A from "@/components/ExternalLink.astro";
 // import Projects from "@/components/Projects";
 ---
 
@@ -28,6 +30,7 @@ import Plague from "@/assets/plague/plague.astro";
       <span class="text-sm text-cat-subtext0"
         >© Juan David Díaz - {new Date().getFullYear()}</span
       >
+      •
       <a href="https://librecounter.org/referer/show" target="_blank">
         <img
           class="size-4"
@@ -36,6 +39,17 @@ import Plague from "@/assets/plague/plague.astro";
           alt="LibreCounter"
         />
       </a>
+      •
+      <A href="https://github.com/catppuccin/catppuccin" class="text-sm">
+        Palette by
+        <Image
+          class="inline"
+          src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"
+          width="16"
+          height="16"
+          alt="catppuccin"
+        />
+      </A>
     </footer>
     <div
       class="sticky bottom-0 bg-gradient-to-t from-cat-crust from-40% z-10 md:h-24 h-96 pointer-events-none rounded-t md:mb-0 -mt-64 md:mt-0"

@@ -21,7 +21,7 @@ const id = name?.toLowerCase().replace(/ /g, "-") ?? hash;
     {
       name && (
         <>
-          <h2 class="text-3xl text-cat-red flex gap-2">
+          <h2 class="text-3xl text-cat-red flex gap-2 font-semibold print:font-normal">
             <slot name="icon" />
             {name}
           </h2>
