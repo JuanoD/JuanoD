@@ -1,5 +1,7 @@
 # build output
+.wrangler
 dist/
+public/__astro_font_generated__
 
 # generated types
 .astro/
