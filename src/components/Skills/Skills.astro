@@ -1,6 +1,90 @@
 ---
 import Section from "@/layouts/Section.astro";
-import { Image } from "astro:assets";
+import Skill from "./Skill.astro";
+
+const skills = [
+  {
+    name: "Next.js",
+    icon: "https://skillicons.dev/icons?i=nextjs",
+  },
+  {
+    name: "TailwindCSS",
+    icon: "https://skillicons.dev/icons?i=tailwind",
+  },
+  {
+    name: "Typescript",
+    icon: "https://skillicons.dev/icons?i=ts",
+  },
+  {
+    name: "React",
+    icon: "https://skillicons.dev/icons?i=react",
+  },
+  {
+    name: "CSS",
+    icon: "https://skillicons.dev/icons?i=css",
+  },
+  {
+    name: "Docker",
+    icon: "https://skillicons.dev/icons?i=docker",
+  },
+  {
+    name: "NodeJS",
+    icon: "https://skillicons.dev/icons?i=nodejs",
+  },
+  {
+    name: "Django",
+    icon: "https://skillicons.dev/icons?i=django",
+  },
+  {
+    name: "Python",
+    icon: "https://skillicons.dev/icons?i=py",
+  },
+  {
+    name: "nginx",
+    icon: "https://skillicons.dev/icons?i=nginx",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://skillicons.dev/icons?i=postgres",
+  },
+  {
+    name: "RabbitMQ",
+    icon: "https://skillicons.dev/icons?i=rabbitmq",
+  },
+];
+const tools = [
+  {
+    name: "Git",
+    icon: "https://skillicons.dev/icons?i=git",
+  },
+  {
+    name: "Figma",
+    icon: "https://skillicons.dev/icons?i=figma",
+  },
+  {
+    name: "Linux",
+    icon: "https://skillicons.dev/icons?i=linux",
+  },
+  {
+    name: "VSCode",
+    icon: "https://skillicons.dev/icons?i=vscode",
+  },
+  {
+    name: "Blender",
+    icon: "https://skillicons.dev/icons?i=blender",
+  },
+  {
+    name: "LaTeX",
+    icon: "https://skillicons.dev/icons?i=latex",
+  },
+];
+const learning = [
+  {
+    name: "Kubernetes",
+    icon: "https://skillicons.dev/icons?i=kubernetes",
+  },
+  { name: "Astro", icon: "https://skillicons.dev/icons?i=astro" },
+];
 ---
 
 <Section animation={2} name="Skills">
@@ -8,20 +92,9 @@ import { Image } from "astro:assets";
     <h3 class="text-cat-peach text-lg font-bold self-center text-balance mb-2">
       Technologies
     </h3>
-    <a href="https://skillicons.dev" target="_blank" rel="noopener noreferrer">
-      <Image
-        src="https://skillicons.dev/icons?i=nextjs,tailwind,ts,react,css,docker,md,nodejs,django,py,nginx,postgres,rabbitmq&perline=6"
-        alt="Nextjs Tailwind Typescript React CSS Docker Markdown NodeJS Django Python Nginx Postgres Rabbitmq"
-        inferSize
-        class="print:hidden"
-      />
-      <Image
-      src="https://skillicons.dev/icons?i=nextjs,tailwind,ts,react,css,docker,md,nodejs,django,py,nginx,postgres,rabbitmq&perline=13"
-      alt="Nextjs Tailwind Typescript React CSS Docker Markdown NodeJS Django Python Nginx Postgres Rabbitmq"
-      inferSize
-      class="hidden print:block"
-    />
-    </a>
+    <ul class="flex gap-2 flex-wrap max-w-prose print:max-w-max">
+      {skills.map((skill) => <Skill name={skill.name} icon={skill.icon} />)}
+    </ul>
   </div>
 
   <div class="break-inside-avoid w-fit">
@@ -30,13 +103,9 @@ import { Image } from "astro:assets";
     >
       Tools
     </h3>
-    <a href="https://skillicons.dev" target="_blank" rel="noopener noreferrer">
-      <Image
-        src="https://skillicons.dev/icons?i=git,figma,linux,vscode,blender,latex&perline=6"
-        alt="Git Figma Linux VSCode Blender LaTeX"
-        inferSize
-      />
-    </a>
+    <ul class="flex gap-2 flex-wrap max-w-prose print:max-w-max">
+      {tools.map((skill) => <Skill name={skill.name} icon={skill.icon} />)}
+    </ul>
   </div>
 
   <div class="break-inside-avoid w-fit">
@@ -45,12 +114,8 @@ import { Image } from "astro:assets";
     >
       Learning
     </h3>
-    <a href="https://skillicons.dev" target="_blank" rel="noopener noreferrer">
-      <Image
-        src="https://skillicons.dev/icons?i=kubernetes,astro&perline=6"
-        alt="Kubernetes Astro"
-        inferSize
-      />
-    </a>
+    <ul class="flex gap-2 flex-wrap max-w-prose print:max-w-max">
+      {learning.map((skill) => <Skill name={skill.name} icon={skill.icon} />)}
+    </ul>
   </div>
 </Section>
