@@ -37,11 +37,11 @@ type ClipsRecord = Record<AnimationName, AnimationAction>;
 export function Plague() {
   const { scene, animations } = useGLTF("/plague.glb");
   const mixer = useMemo(() => new AnimationMixer(scene), [scene]);
-  const clips = useRef<ClipsRecord>();
+  const clips = useRef<ClipsRecord>(null);
   const [loaded, setLoaded] = useState(false);
 
-  const nextAnimation = useRef<AnimationAction>();
-  const lastAnimation = useRef<AnimationAction>();
+  const nextAnimation = useRef<AnimationAction>(null);
+  const lastAnimation = useRef<AnimationAction>(null);
 
   const groupRef = useRef<Group>(null);
 
@@ -80,7 +80,7 @@ export function Plague() {
       nextAnimation.current?.play?.();
 
       lastAnimation.current = nextAnimation.current;
-      nextAnimation.current = undefined;
+      nextAnimation.current = null;
     };
     mixer.addEventListener("finished", onFinish);
 

@@ -1,4 +1,4 @@
-import { Suspense, lazy, type PropsWithChildren } from "react";
+import { Suspense, lazy } from "react";
 import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
 
 const Experience = lazy(() =>

@@ -1,7 +1,6 @@
 // @ts-check
 import catppuccin from "@catppuccin/tailwindcss";
 import plugin from "tailwindcss/plugin";
-import animate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -20,7 +19,6 @@ export default {
     },
   },
   plugins: [
-    animate,
     catppuccin({
       prefix: "cat",
       defaultFlavour: "mocha",

@@ -25,20 +25,19 @@ export function useMediaQuery(query: string): boolean {
     handleChange();
 
     // Listen matchMedia
-    if (matchMedia.addListener) {
-      matchMedia.addListener(handleChange);
-    } else {
+    if (matchMedia.addEventListener) {
       matchMedia.addEventListener("change", handleChange);
+    } else if (matchMedia.addListener) {
+      matchMedia.addListener(handleChange);
     }
 
     return () => {
-      if (matchMedia.removeListener) {
-        matchMedia.removeListener(handleChange);
-      } else {
+      if (matchMedia.removeEventListener) {
         matchMedia.removeEventListener("change", handleChange);
+      } else if (matchMedia.removeListener) {
+        matchMedia.removeListener(handleChange);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   return matches;
