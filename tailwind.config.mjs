@@ -6,10 +6,18 @@ import animate from "tailwindcss-animate";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
+    //
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // mona: ["var(--font-mona-sans)"],
+        merriweather: ["var(--font-merriweather)"],
+        // voltaire: ["var(--font-voltaire)"],
+        // "fira-sans": ["var(--font-fira-sans)"],
+      },
+    },
   },
   plugins: [
     animate,

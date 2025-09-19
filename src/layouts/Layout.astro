@@ -1,6 +1,8 @@
 ---
 import { SEO } from "astro-seo";
+import FontConfig from "@/components/FontConfig.astro";
 import og from "@/assets/og.png";
+
 interface Props {
   title: string;
 }
@@ -43,6 +45,7 @@ const site = "https://juanod.com";
         ],
       }}
     />
+    <FontConfig />
   </head>
   <body>
     <slot />
@@ -70,6 +73,7 @@ const site = "https://juanod.com";
       }
       html {
         font-family: system-ui, sans-serif;
+        /* font-family: theme(fontFamily.fira-sans); */
         background: theme(colors.cat-base.DEFAULT);
         background-size: 224px;
       }
