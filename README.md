@@ -3,12 +3,12 @@
 </div>
 
 <p align="center">
-  Documentation reading enjoyer. Constantly learning developer.
+  Documentation reading enjoyer. Fullstack developer in continuous learning.
 </p>
 
-- 🧑🏻‍💻 I'm currently working using **NextJS and Typescript**, and learning **Kubernetes** to deploy a self-managed cluster.
+- 🧑🏻‍💻 I'm currently working using **NextJS, React, and Typescript**, and learning **Kubernetes** to deploy a self-managed cluster.
 
-- 👨🏻‍🎓 Mechanical engineer, finishing my master in systems and computer engineering.
+- 👨🏻‍🎓 Mechanical engineer, master in systems and computer engineering.
 
 <h2>
   Technologies
