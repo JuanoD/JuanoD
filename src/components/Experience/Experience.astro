@@ -5,31 +5,82 @@ import A from "@/components/ExternalLink.astro";
 ---
 
 <Section name="Experience" animation={1}>
-  <ol
-    class="*:mb-12 last:*:mb-0 max-w-prose print:*:mb-2 print:max-w-max"
-  >
+  <ol class="*:mb-12 last:*:mb-0 max-w-prose print:*:mb-2 print:max-w-max">
+    <JobCard
+      title="Mid-Level Software Engineer"
+      company="DexCare (FullStack contractor)"
+      start="2025-03"
+      end="Present"
+    >
+      Backend developer for the Platform and Shared Services team
+      <Fragment slot="list">
+        <li>
+          Improve query performance, implement new features, and fix bugs in the
+          distributed event-based service, which uses Node.js, RabbitMQ,
+          PostgreSQL, and Redis
+        </li>
+        <li>
+          Investigate and solve incidents using observability tools like Datadog
+        </li>
+        <li>
+          Developed proof of concepts for the shared platform initiative using
+          multiple technologies, like OpenPolicyAgent, React Router, Effect,
+          ArgoCD, and Sequelize
+        </li>
+        <li>
+          Rewrote and maintain the CLI that sets up the Kubernetes ☸️ local
+          development environment from bash to Typescript and made it compatible
+          with Linux, Mac, and Windows machines. Included ArgoCD to make easier
+          rolling updates to other developers, used the rendered manifests
+          pattern
+        </li>
+      </Fragment>
+    </JobCard>
     <JobCard
       title="Frontend Development Team Leader"
       company="Quick"
       start="2022-02"
-      end="Present"
+      end="2025-02"
     >
-      Led and developed 🧑🏻‍💻 with a team of six persons (peak) in the development
-      and migration of the
-      <A href="https://app.quick.com.co">main application</A>, which included
-      foreseeing and helping them solve complex problems 🚨 and git issues;
-      knowledge 📖 transference; reviewing, making suggestions, and accepting
-      merge requests; receive requirements 📋, plan, and assign activities; and
-      evaluate tests for new personnel hiring
+      Led, designed, and developed 🧑🏻‍💻 with a team of six people (peak) in the
+      migration, maintenance, and feature delivery of the
+      <A href="https://app.quick.com.co">main application</A> and the four countries
+      it offers services to, which included foreseeing and helping the team solve
+      complex problems 🚨 and git issues; knowledge 📖 transference; reviewing, making
+      suggestions, and accepting merge requests; receive requirements 📋, plan, and
+      assign activities; and evaluate tests for new personnel hiring
       <Fragment slot="list">
         <li>
-          Migrate projects to a monorepo, first using
-          <A href="https://nx.dev/">nx</A>, and later using
-          <A href="https://moonrepo.dev/">moonrepo 🌕</A>
+          Rewrote a microservice that consumes RabbitMQ queues. It used to be
+          plain Javascript; now it uses
+          <A href="https://effect.website/">Effect-TS</A>, performs retries to
+          mitigate failures for this critical component, and handles
+          acknowledgments correctly
         </li>
-        <li>Optimize container 🐳 images</li>
-        <li>Deploy 🚀 to prod</li>
-        <li>Led and developed for the backend during the leader vacation</li>
+        <li>
+          Participated in the refinement and development of 200+ requirements
+        </li>
+        <li>
+          Progressive migration from pages router to app router in the main
+          Next.js application
+        </li>
+        <li>
+          Migrated projects to a monorepo, first using
+          <A href="https://nx.dev/">nx</A>, and later using
+          <A href="https://moonrepo.dev/">moonrepo 🌕</A>, while introducing
+          tooling to keep the code quality for both backend and frontend teams
+        </li>
+        <li>Optimized container 🐳 images</li>
+        <li>
+          Verified and deployed 🚀 applications to development and production
+          environments
+        </li>
+        <li>
+          Implemented requirements for a Django backend and Celery task queue,
+          using async when needed (parallel requests) to improve task execution
+          time
+        </li>
+        <li>Led and developed for the backend during the leader's PTO</li>
         <li>Helped with some support tickets for the backend team</li>
         <li>Migrated Gatsby app to Next.js</li>
       </Fragment>
@@ -40,9 +91,9 @@ import A from "@/components/ExternalLink.astro";
       start="2021-10"
       end="2022-02"
     >
-      Introduced typescript to new projects, and rewrote 📝 the company components
-      library to typescript, while developing new components. Also introduced
-      the usage of Next.js to new projects
+      Introduced typescript to new projects, and rewrote 📝 the company
+      components library to typescript, while developing new components. Also
+      introduced the usage of Next.js to new projects
       <Fragment slot="list">
         <li>
           Developed a platform to review, approve, or reject driver candidates
@@ -65,11 +116,7 @@ import A from "@/components/ExternalLink.astro";
         </li>
       </Fragment>
     </JobCard>
-    <JobCard
-      company="Self-Employed"
-      start="2019-01"
-      end="2020-06"
-    >
+    <JobCard company="Self-Employed" start="2019-01" end="2020-06">
       Worked in multiple non-related projects, including but not limited to:
       <Fragment slot="list">
         <li>
