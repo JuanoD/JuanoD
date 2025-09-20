@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
+
+@theme {
+  --font-merriweather: var(--font-merriweather);
+}
+
+@utility auto-fill-* {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(--spacing(--value(integer)), 100%), 1fr)
+  );
+}
+
+@utility auto-fit-* {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(--spacing(--value(integer)), 100%), 1fr)
+  );
+}

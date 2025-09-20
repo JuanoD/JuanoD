@@ -10,8 +10,8 @@ interface Props {
 const { name, image } = Astro.props;
 ---
 
-<li class="p-5 list-none grid grid-rows-subgrid row-span-2 bg-cat-crust/50 backdrop-blur-sm rounded">
-  <h3 class="text-lg font-bold text-cat-peach">{name}</h3>
+<li class="p-5 list-none grid grid-rows-subgrid row-span-2 bg-ctp-crust/50 backdrop-blur-xs rounded-sm">
+  <h3 class="text-lg font-bold text-ctp-peach">{name}</h3>
 
   <Image src={image.src} alt={image.alt} class="object-contain h-36" />
 </li>

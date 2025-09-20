@@ -11,14 +11,14 @@ const { title, company, start, end } = Astro.props;
 
 <li class="col-span-full gap-y-2 break-inside-avoid">
   <div class="flex justify-between items-center">
-    <h3 class="text-cat-peach text-lg font-bold self-center text-balance">{company}</h3>
-    <time class="text-sm text-cat-subtext0">
+    <h3 class="text-ctp-peach text-lg font-bold self-center text-balance">{company}</h3>
+    <time class="text-sm text-ctp-subtext0">
       {start} — {end}
     </time>
   </div>
-  <h4 class="text-cat-yellow font-semibold text-balance empty:hidden">{title}</h4>
+  <h4 class="text-ctp-yellow font-semibold text-balance empty:hidden">{title}</h4>
   <p class="mb-2 empty:hidden"><slot /></p>
-  <ul class="list-disc *:mb-1 pl-4 marker:text-cat-green/100 empty:hidden">
+  <ul class="list-disc *:mb-1 pl-4 marker:text-ctp-green/100 empty:hidden">
     <slot name="list" />
   </ul>
 </li>

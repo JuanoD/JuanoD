@@ -1,4 +1,5 @@
 ---
+import "@/styles/global.css";
 import { SEO } from "astro-seo";
 import FontConfig from "@/components/FontConfig.astro";
 import og from "@/assets/og.png";
@@ -50,6 +51,7 @@ const site = "https://juanod.com";
   <body>
     <slot />
     <style is:global>
+      @reference "@/styles/global.css";
       :root {
         --accent: 136, 58, 234;
         --accent-light: 224, 204, 250;
@@ -60,7 +62,7 @@ const site = "https://juanod.com";
           rgb(var(--accent-light)) 30%,
           white 60%
         );
-        color: theme(colors.cat-text.DEFAULT);
+        color: theme(--color-ctp-text);
       }
 
       * {
@@ -68,13 +70,13 @@ const site = "https://juanod.com";
       }
 
       ::selection {
-        background-color: theme(colors.cat-surface2.DEFAULT / 0.5);
-        color: theme(colors.cat-text.DEFAULT);
+        background-color: theme(--color-ctp-surface2 / 0.5);
+        color: theme(--color-ctp-text);
       }
       html {
         font-family: system-ui, sans-serif;
         /* font-family: theme(fontFamily.fira-sans); */
-        background: theme(colors.cat-base.DEFAULT);
+        background: theme(--color-ctp-base);
         background-size: 224px;
       }
 
@@ -86,7 +88,7 @@ const site = "https://juanod.com";
       }
 
       a {
-        @apply focus-visible:ring-2 focus-visible:ring-cat-sky focus:outline-none focus-visible:outline-none rounded text-cat-blue hover:text-cat-sky;
+        @apply focus-visible:ring-2 focus-visible:ring-ctp-sky focus:outline-hidden focus-visible:outline-hidden rounded-sm text-ctp-blue hover:text-ctp-sky;
       }
 
       code {
